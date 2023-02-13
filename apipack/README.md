@@ -1,9 +1,8 @@
 # APIPACK
 
-> Pack every API to be everything.
+> To pack everything to be every API.
 
-Apipack is an HTTP service codegen/bundler tool for Frontend. Its main purpose is to auto-generate Frontend JavaScript/TypeScript service code by analyzing Backend controller routes and their params, return values, and type definitions.
-
+Apipack is a HTTP service code-gen/bundler tool for Frontend. Its main purpose is to auto-generate Frontend JavaScript/TypeScript service code by analyzing Backend controller routes, params, return values, and type definitions.
 
 ## DESIGN
 
@@ -19,41 +18,42 @@ It watches the specified glob syntax path and uses the corresponding backend ser
 It analyses the corresponding backend source code and outputs `HTTPServiceModules`. Some of the below listed is just for example that does not mean we will implement those all.
 
 For Java:
+
 - @apipack/java
 - @apipack/spring-boot
 ...
 
 For JavaScript:
+
 - @apipack/javascript
 - @apipack/express
 - @apipack/nest
 ...
 
 For Go:
+
 - @apipack/go
 
 For Python:
+
 - @apipack/python
 - @apipack/flask
 - @apipack/django
-
 
 ### Generators
 
 It consumes `HTTPServiceModules` to generate them be any language style like `HTTPServices` code written by JavaScript or TypeScript in FrontEnds.
 
 - @apipack/generator
-	- typescript
-	- javascript
-	...
-
+  - typescript
+  - javascript
+ ...
 
 ## Usage
 
 1. Register the `plugin` to your project build tools flow, whatever `Webpack` or `Vite`.
 2. Choose a specified language adapter for your backend project, for example, `adapter: 'SpringBOOT'`.
 3. Inject the import header code to your code generator, and use interceptor to concatenate the final service code.
-
 
 ## Question?
 
