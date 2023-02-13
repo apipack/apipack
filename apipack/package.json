@@ -1,0 +1,36 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@types/node": "^18.11.5",
+    "@typescript-eslint/eslint-plugin": "^5.41.0",
+    "@typescript-eslint/parser": "^5.41.0",
+    "debug": "^4.3.4",
+    "eslint": "^8.26.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "lerna": "^6.0.1",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.4"
+  },
+  "gitHooks": {
+    "pre-commit": "npm run lint:fix",
+    "commit-msg": "commitlint"
+  },
+  "scripts": {
+    "publish": "lerna run tsc && lerna publish",
+    "bootstrap": "lerna bootstrap --hoist",
+    "start": "lerna run dev --stream",
+    "dev": "lerna run dev --parallel",
+    "test": "lerna run start --parallel",
+    "tsc": "lerna run tsc --stream",
+    "build": "lerna run build --parallel",
+    "clean": "lerna run clean"
+  },
+  "dependencies": {
+    "@types/debug": "^4.1.7"
+  }
+}

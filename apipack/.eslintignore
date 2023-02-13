@@ -1,0 +1,8 @@
+node_modules/
+lerna-debug.log
+npm-debug.log
+lib
+dist
+packages/*/lib
+packages/*/dist
+.idea
